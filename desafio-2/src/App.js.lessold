@@ -1,0 +1,58 @@
+import logo from './logo.svg';
+import './App.css';
+
+function App() {
+	return (
+		
+		<div className="App">
+			
+		<header className="App-header">
+
+
+			<form>
+
+				<label>
+					Nome<br></br>
+					<input type="text" name="nome" />
+				</label>
+
+
+				<br></br>
+				
+				<label>
+					Email<br></br>
+					<input type="email" name="email" />
+				</label>
+
+
+				<br></br>
+
+				<label>
+					Telefone<br></br>
+					<input type="email" name="email" />
+				</label>
+
+
+				<br></br>
+
+				<label>
+					CPF<br></br>
+					<input type="email" name="email" />
+				</label>
+
+
+				<br></br>
+
+				<input type="submit" value="Enviar" />
+
+
+			</form>
+
+
+			
+		</header>
+		</div>
+	);
+}
+
+export default App;
