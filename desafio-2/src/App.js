@@ -6,7 +6,7 @@ import Axios from "axios";
 
 function App() {
 
-	let currentCC; //o country code do pais atualmente selecionado
+	let currentCC; //country code do pais atualmente selecionado
 	let currentCountry;
 
 	const [countriesList, setCountriesList] = useState([]);
@@ -19,7 +19,7 @@ function App() {
 
 
 
-	//Recebe paises pela API da amazon
+	//recebe paises pela API da amazon
 	const getCountries = async () => {
 		const countryRes = await Axios.get(
 			`https://amazon-api.sellead.com/country`
@@ -59,7 +59,6 @@ function App() {
 			if (data.name == currentCountry)
 			{
 				currentCC = data.code;
-				//alert(currentCC);
 			}
 		});
 	};
@@ -70,11 +69,6 @@ function App() {
 		currentCountry = e.target.value;
 		await getCities();
 		
-
-	//  cityRes.data.forEach((data) => {
-		//if (data.name)
-	  //cities.push(data.name);
-	//});
 	};
 
 
@@ -93,40 +87,40 @@ function App() {
 			<form>
 
 				<label>
-					Nome<br></br>
-					<input type="text" name="nome" />
+					Nome *<br></br>
+					<input type="text" name="nome" required/>
 				</label>
 
 
 				<br></br>
 				
 				<label>
-					Email<br></br>
-					<input type="email" name="email" />
+					Email *<br></br>
+					<input type="email" name="email" required/>
 				</label>
 
 
 				<br></br>
 
 				<label>
-					Telefone<br></br>
-					<input type="email" name="email" />
+					Telefone *<br></br>
+					<input type="text" name="telefone" required/>
 				</label>
 
 
 				<br></br>
 
 				<label>
-					CPF<br></br>
-					<input type="email" name="email" />
+					CPF *<br></br>
+					<input type="text" name="cpf" required/>
 				</label>
 
 
 				<br></br>
 
 				<label>	
-					País<br></br>
-					<select onChange={handleChange}>
+					País *<br></br>
+					<select onChange={handleChange} required>
 						{countriesList.map((data, i) => (
 						<option key={i} value={data}>
 							{data}
@@ -139,8 +133,8 @@ function App() {
 				<br></br>
 
 				<label>	
-					Cidade<br></br>
-					<select>
+					Cidade *<br></br>
+					<select required>
 						{citiesList.map((data, i) => (
 						<option key={i} value={data}>
 							{data}
